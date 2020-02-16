@@ -10,5 +10,6 @@ Collection of Flutter Samples Apps
 * [Neumorphism](https://mightytechno.com/neumorphism-flutter/)
 
 Website - [michtytechno](https://mightytechno.com/)
+
 Instagram - [michty_techno](https://www.instagram.com/mighty_techno/)
 
