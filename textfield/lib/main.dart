@@ -28,10 +28,6 @@ class TextWidget extends StatefulWidget {
 
 class _TextWidgetState extends State<TextWidget> {
   TextEditingController controller;
-  bool isNameValid = true;
-  RegExp regExp = new RegExp(
-    r'^[a-zA-Z]+$',
-  );
 
   @override
   void initState() {
@@ -43,21 +39,21 @@ class _TextWidgetState extends State<TextWidget> {
   Widget build(BuildContext context) {
     return Container(
       child: Center(
-        child: TextField(
-          onChanged: (value) {
-            if (regExp.hasMatch(value)) {
-              isNameValid = true;
-            } else {
-              isNameValid = false;
-            }
-            setState(() {});
-          },
-          decoration: InputDecoration(
-              labelText: "Enter Name",
-              errorText: isNameValid ? null : "Invalid name"),
-          controller: controller,
+        child: 
+        Text(
+          "Colorful Text",
+          style: TextStyle(color: colorConvert("#F5654B")),
         ),
       ),
     );
+  }
+
+  Color colorConvert(String color) {
+    color = color.replaceAll("#", "");
+    if (color.length == 6) {
+      return Color(int.parse("0xFF" + color));
+    } else if (color.length == 8) {
+      return Color(int.parse("0x" + color));
+    }
   }
 }
